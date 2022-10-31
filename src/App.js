@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import List from './List';
 import Alert from './Alert';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const getLocalStorage = () => {
   let list = localStorage.getItem('list');
   if (list) {
@@ -18,7 +21,8 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name) {
-      showAlert(true, 'danger', 'please enter value');
+      toast.error("Please Enter Value");
+      // showAlert(true, 'danger', 'please enter value');
     } else if (name && isEditing) {
       setList(
         list.map((item) => {
@@ -31,9 +35,12 @@ function App() {
       setName('');
       setEditID(null);
       setIsEditing(false);
-      showAlert(true, 'success', 'value changed');
+      toast.success("Value Changed");
+      
+      // showAlert(true, 'success', 'value changed');
     } else {
-      showAlert(true, 'success', 'item added to the list');
+      toast.success("Item added to the list");
+      // showAlert(true, 'success', 'item added to the list');
       const newItem = { id: new Date().getTime().toString(), title: name };
 
       setList([...list, newItem]);
@@ -45,11 +52,13 @@ function App() {
     setAlert({ show, type, msg });
   };
   const clearList = () => {
-    showAlert(true, 'danger', 'empty list');
+    toast.error("Empty List");
+    // showAlert(true, 'danger', 'empty list');
     setList([]);
   };
   const removeItem = (id) => {
-    showAlert(true, 'danger', 'item removed');
+    toast.warning("Item Removed");
+    // showAlert(true, 'danger', 'item removed');
     setList(list.filter((item) => item.id !== id));
   };
   const editItem = (id) => {
@@ -84,10 +93,11 @@ function App() {
         <div className='grocery-container'>
           <List items={list} removeItem={removeItem} editItem={editItem} />
           <button className='clear-btn' onClick={clearList}>
-            clear items
+            clear list
           </button>
         </div>
       )}
+      <ToastContainer />
     </section>
   );
 }

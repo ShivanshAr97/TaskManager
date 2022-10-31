@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaEdit, FaTrash } from 'react-icons/fa';
+import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai';
+import { BsTrash } from "react-icons/bs";
 const List = ({ items, removeItem, editItem }) => {
   return (
     <div className='grocery-list'>
@@ -14,14 +15,14 @@ const List = ({ items, removeItem, editItem }) => {
                 className='edit-btn'
                 onClick={() => editItem(id)}
               >
-                <FaEdit />
+                <AiOutlineEdit color='black' size="22px" />
               </button>
               <button
                 type='button'
                 className='delete-btn'
                 onClick={() => removeItem(id)}
               >
-                <FaTrash />
+                <BsTrash color='red' size="20px" />
               </button>
             </div>
           </article>

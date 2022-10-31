@@ -217,7 +217,8 @@ Grocery List
   color: var(--clr-grey-5);
 }
 .submit-btn {
-  background: var(--clr-primary-8);
+  background-color: rgb(66, 66, 230);
+  color: white !important;
   border-color: transparent;
   flex: 0 0 5rem;
   display: grid;
@@ -231,10 +232,6 @@ Grocery List
   content: var(--clr-primary-5);
   transition: var(--transition);
   font-size: 0.85rem;
-}
-.submit-btn:hover {
-  background: var(--clr-primary-5);
-  color: var(--clr-white);
 }
 
 .grocery-container {
@@ -287,13 +284,13 @@ Grocery List
 }
 .clear-btn {
   text-transform: capitalize;
-  width: 10rem;
-  height: 1.5rem;
   display: grid;
+  border-radius: 5px;
+  background-color: rgb(66, 66, 230);
+  color: white !important;
+  padding: 7px !important;
   align-items: center;
-  background: transparent;
-  border-color: transparent;
-  color: var(--clr-red-light);
+  border: none;
   margin: 0 auto;
   font-size: 0.85rem;
   letter-spacing: var(--spacing);
