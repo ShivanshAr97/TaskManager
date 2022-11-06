@@ -1,5 +1,5 @@
 import React from 'react';
-import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai';
+import { AiOutlineEdit } from 'react-icons/ai';
 import { BsTrash } from "react-icons/bs";
 const List = ({ items, removeItem, editItem }) => {
   return (
